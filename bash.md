@@ -1,6 +1,6 @@
-Shebang
--------
-#!/usr/bin/env bash
+# Shebang
+
+`#!/usr/bin/env bash`
 
 
 Find all files containing specific text
