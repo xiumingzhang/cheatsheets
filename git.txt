@@ -1,0 +1,13 @@
+Add files from outside the repo
+-------------------------------
+git --work-tree=/another/path add .vimrc
+
+
+Undo rm
+-------
+If you already commited changes, then:
+git reset (--hard) HEAD~1
+
+If not then:
+git reset
+git checkout -- $(git ls-files -d)
