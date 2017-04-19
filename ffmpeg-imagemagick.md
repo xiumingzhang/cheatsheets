@@ -60,35 +60,40 @@ ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=1280:-2 -pix_fmt yu
 ```
 
 
-Make GIF Loop
-=============
+### Make GIF Loop
 
+```
 convert -delay 20 -loop 0 nonloopingImage.gif loopingImage.gif
+```
 
 
-Overlay A on top of B
-=====================
+### Overlay A on top of B
 
+```
 ffmpeg -i B.png -i A.png -filter_complex "[0:v][1:v] overlay" out.png
+```
 
-[0:v][1:v] means that we want the first video file we import with -i to be under video input file 1. :v just means we want video 0 and video 1. [0:a] would mean we want the first imported audio track.
+`[0:v][1:v]` means that we want the first video file we import with `-i` to be under video input file 1. `:v` just means we want video 0 and video 1. `[0:a]` would mean we want the first imported audio track.
 
 
-Scale A and then overlay A on top of B
---------------------------------------
+* Scale A and then overlay A on top of B
 
+```
 ffmpeg -i B.png -i A.png -filter_complex "[1]scale=iw/2:-1[b];[0:v][b] overlay" out.png
+```
 
-[1] is short for 'pick the best matching stream' ([1:v] is short for pick the best matching video stream -- same thing in this case) and [b] is the label for the scale output which is then fed to the overlay.
+`[1]` is short for "pick the best matching stream" (`[1:v]` is short for pick the best matching video stream -- same thing in this case) and `[b]` is the label for the scale output which is then fed to the overlay.
 
 
-Place two images side by side
-=============================
+### Place two images side by side
 
+```
 ffmpeg -i a.jpg -i b.jpg -filter_complex hstack output
+```
 
 
-Overlay text on image
-=====================
+### Overlay text on image
 
+```
 convert in.png -pointsize 40 -fill red -annotate +100+100 'My Text' out.png
+```
