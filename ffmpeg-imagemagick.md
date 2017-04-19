@@ -87,7 +87,7 @@ ffmpeg -i B.png -i A.png -filter_complex "[1]scale=iw/2:-1[b];[0:v][b] overlay" 
 * **Make transparent** A before overlaying
 
 ```
-ffmpeg -i B.png -i A.png -filter_complex "[1]format=argb,geq=r='r(X,Y)':a=\0.5*alpha(X,Y)'[b];[0:v][b] overlay" out.png
+ffmpeg -i B.png -i A.png -filter_complex "[1]format=argb,geq=r='r(X,Y)':a='0.5*alpha(X,Y)'[b];[0:v][b] overlay" out.png
 ```
 
 ### Place two images side by side
