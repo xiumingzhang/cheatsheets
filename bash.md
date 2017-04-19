@@ -1,19 +1,19 @@
-# Shebang
+### Shebang
 
 `#!/usr/bin/env bash`
 
 
-# Find all files containing specific text
+### Find all files containing specific text
 
 `grep -rnw '/path/to/somewhere/' -e "pattern"`
 
 
-# Remove all files but one
+## Remove all files but one
 
 `find . ! -name 'roKeep.txt' -type f -exec rm -f {} +`
 
 
-# Relative path to absolute
+## Relative path to absolute
 
 `readlink -m /x/y/../../a/b/z/../c/d`
 gives
