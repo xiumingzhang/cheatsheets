@@ -76,7 +76,7 @@ ffmpeg -i B.png -i A.png -filter_complex "[0:v][1:v] overlay" out.png
 `[0:v][1:v]` means that we want the first video file we import with `-i` to be under video input file 1. `:v` just means we want video 0 and video 1. `[0:a]` would mean we want the first imported audio track.
 
 
-* Scale A and then overlay A on top of B
+* **Scale** A before overlaying
 
 ```
 ffmpeg -i B.png -i A.png -filter_complex "[1]scale=iw/2:-1[b];[0:v][b] overlay" out.png
@@ -84,6 +84,11 @@ ffmpeg -i B.png -i A.png -filter_complex "[1]scale=iw/2:-1[b];[0:v][b] overlay" 
 
 `[1]` is short for "pick the best matching stream" (`[1:v]` is short for pick the best matching video stream -- same thing in this case) and `[b]` is the label for the scale output which is then fed to the overlay.
 
+* **Make transparent** A before overlaying
+
+```
+ffmpeg -i B.png -i A.png -filter_complex "[1]format=argb,geq=r='r(X,Y)':a=\0.5*alpha(X,Y)'[b];[0:v][b] overlay" out.png
+```
 
 ### Place two images side by side
 
