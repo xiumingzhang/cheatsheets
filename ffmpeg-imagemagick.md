@@ -90,6 +90,8 @@ ffmpeg -i B.png -i A.png -filter_complex "[1]scale=iw/2:-1[b];[0:v][b] overlay" 
 ffmpeg -i B.png -i A.png -filter_complex "[1]format=argb,geq=r='r(X,Y)':a='0.5*alpha(X,Y)'[b];[0:v][b] overlay" out.png
 ```
 
+`0.5` is the opacity factor. I'm including `format=argb` so that it also works with overlay images that don't have an alpha channel of themselves.
+
 ### Place two images side by side
 
 ```
