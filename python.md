@@ -1,5 +1,6 @@
-Insert lines to file
---------------------
+### Insert lines to file
+
+```
 f = open(mtlFile, 'r')
 lines = f.readlines()
 f.close()
@@ -9,3 +10,4 @@ f = open(mtlFile, 'w')
 lines = ''.join(lines) # list to string
 f.write(lines)
 f.close()
+```
