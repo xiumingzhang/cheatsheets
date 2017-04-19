@@ -41,13 +41,14 @@ echo ext=${xfext}
 ```
 
 
-Parse string by a single-character delimiter
---------------------------------------------
-string="1;2"
+### Parse string by a single-character delimiter
+
+```string="1;2"
 echo $string | cut -d';' -f1 # output is 1
 echo $string | cut -d';' -f2 # output is 2
+```
 
-echo "abc : def" | awk -F' : ' '{print $1}'
+`echo "abc : def" | awk -F' : ' '{print $1}'`
 
 
 Split string into an array by delimeter
