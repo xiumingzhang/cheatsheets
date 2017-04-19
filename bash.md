@@ -29,7 +29,8 @@ gives
 
 ### Parse filename/path/extension
 
-```a=/tmp/xx/file.tar.gz
+```
+a=/tmp/xx/file.tar.gz
 xpath=${a%/*}
 xbase=${a##*/}
 xfext=${xbase##*.}
@@ -43,7 +44,8 @@ echo ext=${xfext}
 
 ### Parse string by a single-character delimiter
 
-```string="1;2"
+```
+tring="1;2"
 echo $string | cut -d';' -f1 # output is 1
 echo $string | cut -d';' -f2 # output is 2
 ```
