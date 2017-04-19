@@ -4,7 +4,7 @@
 ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
 ```
 
-* Also remove sound and convert format
+* Also remove sound and **convert format**
 
 ```
 ffmpeg -i sintel.avi -ss 0:9:37.0 -c copy -to 0:9:40.50 -an bigFight.mp4
@@ -35,19 +35,19 @@ ffmpeg -i dense.avi -c:v libx264 noDepth.mp4
 
 ### Images to video
 
-* Numeric filename
+* **Numeric** filename
 
 ```
 ffmpeg -framerate 20 -start_number 1 -i %3d_0zz.png -vf fps=20 -pix_fmt yuv420p output.mp4
 ```
 
-* Character filename
+* **Character** filename
 
 ```
 ffmpeg -framerate 2 -pattern_type glob -i "*.png" -pix_fmt yuv420p output.mp4
 ```
 
-* If not divisible by 2 (specify height)
+* If **not divisible by 2** (specify height)
 
 ```
 ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=-2:720 -pix_fmt yuv420p output.mp4
