@@ -3,38 +3,39 @@
 `#!/usr/bin/env bash`
 
 
-Find all files containing specific text
----------------------------------------
-grep -rnw '/path/to/somewhere/' -e "pattern"
+# Find all files containing specific text
+
+`grep -rnw '/path/to/somewhere/' -e "pattern"`
 
 
-Remove all files but one
-------------------------
-find . ! -name 'roKeep.txt' -type f -exec rm -f {} +
+# Remove all files but one
+
+`find . ! -name 'roKeep.txt' -type f -exec rm -f {} +`
 
 
-Relative path to absolute
--------------------------
-readlink -m /x/y/../../a/b/z/../c/d
-/a/b/c/d
+# Relative path to absolute
+
+`readlink -m /x/y/../../a/b/z/../c/d`
+gives
+`/a/b/c/d`
 
 
-Get current user
-----------------
-whoami
+# Get current user
+
+`whoami`
 
 
-Parse filename/path/extension
------------------------------
-a=/tmp/xx/file.tar.gz
-xpath=${a%/*} 
-xbase=${a##*/}
-xfext=${xbase##*.}
-xpref=${xbase%.*}
-echo ${a}
-echo path=${xpath}
-echo pref=${xpref}
-echo ext=${xfext}
+# Parse filename/path/extension
+
+`a=/tmp/xx/file.tar.gz`
+`xpath=${a%/*}`
+`xbase=${a##*/}`
+`xfext=${xbase##*.}`
+`xpref=${xbase%.*}`
+`echo ${a}`
+`echo path=${xpath}`
+`echo pref=${xpref}`
+`echo ext=${xfext}`
 
 
 Parse string by a single-character delimiter
