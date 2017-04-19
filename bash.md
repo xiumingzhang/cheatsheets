@@ -189,30 +189,38 @@ rename -n 's/(.{5})(.*)$/$2/' *.*
 The `-n` is for simulating; remove it to get the actual result.
 
 
-Remove last 4 characters from a string
---------------------------------------
+### Remove last 4 characters from a string
+
+```
 v="some string.rtf"
 v2=${v::-4}
 echo "$v --> $v2"
+```
 
 
-Copy every fourth file in a folder
-----------------------------------
+### Copy every fourth file in a folder
+
+```
 cp $(printf '%s\n' im???.jpg | awk 'NR%4 == 1') /some/place
+```
 
 
-Renaming files in a folder to sequential numbers
-------------------------------------------------
+### Renaming files in a folder to sequential numbers
+
+```
 a=1
 for i in *.png; do
 	new=$(printf "%03d.png" "$a")
 	mv -- "$i" "$new"
 	let a=a+1
 done
+```
 
 
-Check if element in array
--------------------------
+### Check if element in array
+
+
+```
 array_contains2 () { 
     local array="$1[@]"
     local seeking=$2
@@ -227,35 +235,44 @@ array_contains2 () {
 }
 array_contains2 arr "a b"  && echo yes || echo no    # no
 array_contains2 arr "d e"  && echo yes || echo no    # yes
+```
 
 
-Number of elements in array
----------------------------
-a=(1 2 3 4)
+### Number of elements in array
+
+```
+a=(1 1 2 3 4)
 echo ${#a[@]}
-4
+```
 
 
-Append to array
----------------
+### Append to array
+
+```
 ARRAY=()
 ARRAY+=('foo')
 ARRAY+=('bar')
 echo ${ARRAY[0]}
+```
 
 
-Assign command output to variable
----------------------------------
+### Assign command output to variable
+
+```
 n=$(ls *.py | wc -l)
+```
 
 
-Extract 68th line of file
--------------------------
+### Extract the n-th line of file
+
+```
 sed '68q;d' param1.csv
+```
 
 
-Block comment
--------------
+### Block comment
+
+```
 #!/bin/bash
 echo before comment
 : <<'END'
@@ -263,13 +280,18 @@ bla bla
 blurfl
 END
 echo after comment
+```
 
 
-Pretty print PATH
------------------
+### Pretty print PATH
+
+```
 tr ':' '\n' <<< "$PATH"
+```
 
 
-Download repo from GitHub
--------------------------
+### Download repo from GitHub
+
+```
 git clone git://github.com/vim/vim.git
+```
