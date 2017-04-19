@@ -1,30 +1,42 @@
 ### Shebang
 
-`#!/usr/bin/env bash`
+```
+#!/usr/bin/env bash
+```
 
 
 ### Find all files containing specific text
 
-`grep -rnw '/path/to/somewhere/' -e "pattern"`
+```
+grep -rnw '/path/to/somewhere/' -e "pattern"
+```
 
 
 ### Remove all files but one
 
-`find . ! -name 'roKeep.txt' -type f -exec rm -f {} +`
+```
+find . ! -name 'roKeep.txt' -type f -exec rm -f {} +
+```
 
 
 ### Relative path to absolute
 
-`readlink -m /x/y/../../a/b/z/../c/d`
+```
+readlink -m /x/y/../../a/b/z/../c/d
+```
 
 gives
 
-`/a/b/c/d`
+```
+/a/b/c/d
+```
 
 
 ### Get current user
 
-`whoami`
+```
+whoami
+```
 
 
 ### Parse filename/path/extension
@@ -50,7 +62,9 @@ echo $string | cut -d';' -f1 # output is 1
 echo $string | cut -d';' -f2 # output is 2
 ```
 
-`echo "abc : def" | awk -F' : ' '{print $1}'`
+```
+echo "abc : def" | awk -F' : ' '{print $1}'
+```
 
 
 ### Split string into an array by delimeter
@@ -65,12 +79,16 @@ echo ${arrIN[1]}
 
 ### Free space available in current directory
 
-`df -Ph . | tail -1 | awk '{print $4}'`
+```
+df -Ph . | tail -1 | awk '{print $4}'
+```
 
 
 ### Size of a directory
 
-`du -sh directory_name`
+```
+du -sh directory_name
+```
 
 
 ### Numeric equality
@@ -109,25 +127,30 @@ fi
 ```
 
 
-Logical operators
------------------
+### Logical operators
+
+```
 if (! (( var == 2 || var < 30 ))) && [[ ${str} == abc ]]; then
     # do something
 fi
 If (not ((var == 2) or (var < 30)) and (str is abc))
+```
 
 
-Loop through only directories
------------------------------
+### Loop through only directories
+
+```
 for f in *; do
     if [[ -d $f ]]; then
         # $f is a directory
     fi
 done
+```
 
 
-Else
-----
+### Else
+
+```
 if [ "$seconds" -eq 0 ]; then
    timezone_string="Z"
 elif [ "$seconds" -gt 0 ]; then
@@ -135,28 +158,35 @@ elif [ "$seconds" -gt 0 ]; then
 else
    echo "Unkown parameter"
 fi
+```
 
 
-Loop through elements in array
-------------------------------
+### Loop through elements in array
+
+```
 clips=( "ballet11-2" "jogging" )
 for clip in "${clips[@]}"; do
 	frameDir=/data/vision/billf/shapetime/new1/data/clips/${clip}
 done
+```
 
 
-Loop through elements with index
---------------------------------
+### Loop through elements with index
+
+```
 arr=( 7 12 16 )
 for i in "${!arr[@]}"; do 
   printf "%s\t%s\n" "$i" "${arr[$i]}"
 done
+```
 
 
-Remove the first 5 characters from each filename
-------------------------------------------------
+### Remove the first 5 characters from each filename
+
+```
 rename -n 's/(.{5})(.*)$/$2/' *.*
-The -n is for simulating; remove it to get the actual result.
+```
+The `-n` is for simulating; remove it to get the actual result.
 
 
 Remove last 4 characters from a string
