@@ -1,19 +1,23 @@
-Cut Video
-=========
+### Cut Video
 
+```
 ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
+```
 
-... also remove sound and convert format
--------------------------------
+#### ... also remove sound and convert format
+
+```
 ffmpeg -i sintel.avi -ss 0:9:37.0 -c copy -to 0:9:40.50 -an bigFight.mp4
+```
 
 
-Scale image
-===========
+### Scale image
 
-Specify width
--------------
+#### Specify width
+
+```
 ffmpeg -i in.png -vf scale=iw/2:-1 out.png
+```
 
 Specify height
 --------------
