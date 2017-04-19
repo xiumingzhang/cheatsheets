@@ -53,50 +53,60 @@ echo $string | cut -d';' -f2 # output is 2
 `echo "abc : def" | awk -F' : ' '{print $1}'`
 
 
-Split string into an array by delimeter
----------------------------------------
+### Split string into an array by delimeter
+
+```
 IN="bla@some.com;john@home.com"
 arrIN=(${IN//;/ })
 echo ${arrIN[0]}
 echo ${arrIN[1]}
+```
 
 
-Free space available in current directory
------------------------------------------
-df -Ph . | tail -1 | awk '{print $4}'
+### Free space available in current directory
+
+`df -Ph . | tail -1 | awk '{print $4}'`
 
 
-Size of a directory
--------------------
-du -sh directory_name
+### Size of a directory
+
+`du -sh directory_name`
 
 
-Numeric equality
-----------------
+### Numeric equality
+
+```
 if (( var == 3 )); then
     echo "yes"
 fi
+```
 
 
-String equality
----------------
+### String equality
+
+```
 if [[ ${str} == 3 ]]; then
     echo "yes"
 fi
+```
 
 
-Check if directory exists
--------------------------
+### Check if directory exists
+
+```
 if [ -d "$DIRECTORY" ]; then
     # Will enter here if $DIRECTORY exists, even if it contains spaces
 fi
+```
 
 
-Check if file exists
---------------------
+### Check if file exists
+
+```
 if [ -e "$FILE" ]; then
     # Will enter here if $FILE exists, even if it contains spaces
 fi
+```
 
 
 Logical operators
