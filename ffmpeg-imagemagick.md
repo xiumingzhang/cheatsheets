@@ -92,11 +92,21 @@ ffmpeg -i B.png -i A.png -filter_complex "[1]format=argb,geq=r='r(X,Y)':a='0.5*a
 
 `0.5` is the opacity factor. I'm including `format=argb` so that it also works with overlay images that don't have an alpha channel of themselves.
 
-### Place two images side by side
+
+### Horizontally stack two images
 
 ```
 ffmpeg -i a.jpg -i b.jpg -filter_complex hstack output
 ```
+
+
+### Vertically stack two images; need to rescale one
+
+```
+ffmpeg -i top.png -i bottom.png -filter_complex '[1][0]scale2ref=iw:iw*(H/W)[2nd][ref];[ref][2nd]vstack' out.png
+```
+
+where `H` and `W` should be replaced with the height and width of `bottom.png`, respectively.
 
 
 ### Overlay text on image
