@@ -283,6 +283,13 @@ echo after comment
 ```
 
 
+### Kill all jobs by me
+
+```
+pkill -9 -u `id -u xiuming`
+```
+
+
 ### Pretty print PATH
 
 ```
