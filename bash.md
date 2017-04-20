@@ -290,7 +290,7 @@ pkill -9 -u `id -u xiuming`
 ```
 
 
-### Pretty print PATH
+### Pretty print `$PATH`
 
 ```
 tr ':' '\n' <<< "$PATH"
