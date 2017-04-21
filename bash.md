@@ -15,7 +15,7 @@ grep -rnw '/path/to/somewhere/' -e "pattern"
 ### Remove all files but one
 
 ```
-find . ! -name 'roKeep.txt' -type f -exec rm -f {} +
+find . ! -name 'toKeep.txt' -type f -exec rm -f {} +
 ```
 
 
@@ -166,7 +166,7 @@ fi
 ```
 clips=( "ballet11-2" "jogging" )
 for clip in "${clips[@]}"; do
-	frameDir=/data/vision/billf/shapetime/new1/data/clips/${clip}
+	frameDir=/data/clips/${clip}
 done
 ```
 
