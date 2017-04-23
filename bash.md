@@ -302,3 +302,10 @@ tr ':' '\n' <<< "$PATH"
 ```
 git clone git://github.com/vim/vim.git
 ```
+
+
+### Locate a binary
+
+```
+type -a python
+```
