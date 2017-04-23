@@ -309,3 +309,10 @@ git clone git://github.com/vim/vim.git
 ```
 type -a python
 ```
+
+
+### Download a file from web
+
+```
+wget http://website.com/files/file.zip
+```
