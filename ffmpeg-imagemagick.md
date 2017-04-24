@@ -47,6 +47,14 @@ ffmpeg -framerate 20 -start_number 1 -i %3d_0zz.png -vf fps=20 -pix_fmt yuv420p 
 ffmpeg -framerate 2 -pattern_type glob -i "*.png" -pix_fmt yuv420p output.mp4
 ```
 
+* Filename of **certain length**
+
+```
+ffmpeg -framerate 2 -pattern_type glob -i "???.png" -pix_fmt yuv420p output.mp4
+```
+
+`???.png` matches with all filenames of length 3.
+
 * If **not divisible by 2** (specify height)
 
 ```
