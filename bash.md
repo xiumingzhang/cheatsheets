@@ -316,3 +316,10 @@ type -a python
 ```
 wget http://website.com/files/file.zip
 ```
+
+
+### Determine contents of binary files
+
+```
+strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+```
