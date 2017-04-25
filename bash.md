@@ -12,6 +12,20 @@ grep -rnw '/path/to/somewhere/' -e "pattern"
 ```
 
 
+### Find file in current directory
+
+```
+find . -name "libstdc++*"
+```
+
+
+### Find string in a directory
+
+```
+grep -R 'string' dir/
+```
+
+
 ### Remove all files but one
 
 ```
