@@ -98,10 +98,10 @@ df -Ph . | tail -1 | awk '{print $4}'
 ```
 
 
-### Size of a directory
+### Sizes of directories
 
 ```
-du -sh directory_name
+du -sh ./*
 ```
 
 
