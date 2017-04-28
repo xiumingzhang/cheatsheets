@@ -337,3 +337,10 @@ wget http://website.com/files/file.zip
 ```
 strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 ```
+
+
+### Arithmetic operations
+
+```
+idx=$((idx+1))
+```
