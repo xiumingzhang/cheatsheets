@@ -148,6 +148,7 @@ if (! (( var == 2 || var < 30 ))) && [[ ${str} == abc ]]; then
     # do something
 fi
 ```
+
 If (not ((var == 2) or (var < 30)) and (str is abc))
 
 
@@ -178,9 +179,17 @@ fi
 ### Loop through elements in array
 
 ```
+# Directly elements
 clips=( "ballet11-2" "jogging" )
 for clip in "${clips[@]}"; do
 	frameDir=/data/clips/${clip}
+done
+
+# Using index
+clips=( "ballet11-2" "jogging" )
+for i in "${!clips[@]}"; do # for (( i = 0; i < ${#clips[@]}; i++ )); do
+    clip="${clips[$i]}"
+    frameDir=/data/clips/${clip}
 done
 ```
 
@@ -252,10 +261,12 @@ array_contains2 arr "d e"  && echo yes || echo no    # yes
 ```
 
 
-### Number of elements in array
+### Array length, indices, contents
 
 ```
 a=(1 1 2 3 4)
+echo ${a[@]}
+echo ${!a[@]}
 echo ${#a[@]}
 ```
 
@@ -343,4 +354,20 @@ strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 
 ```
 idx=$((idx+1))
+```
+
+
+### Wildcard exluding a pattern
+
+```
+find /path/ -name 'foo*.png' -a ! -name 'bar*.png'
+```
+
+Filenames are NOT ordered.
+
+
+### Collect filenames into an array
+
+```
+poseFiles=(/path/*.pkl)
 ```
