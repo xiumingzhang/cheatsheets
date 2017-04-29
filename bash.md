@@ -179,17 +179,9 @@ fi
 ### Loop through elements in array
 
 ```
-# Directly elements
 clips=( "ballet11-2" "jogging" )
 for clip in "${clips[@]}"; do
 	frameDir=/data/clips/${clip}
-done
-
-# Using index
-clips=( "ballet11-2" "jogging" )
-for i in "${!clips[@]}"; do # for (( i = 0; i < ${#clips[@]}; i++ )); do
-    clip="${clips[$i]}"
-    frameDir=/data/clips/${clip}
 done
 ```
 
@@ -198,7 +190,7 @@ done
 
 ```
 arr=( 7 12 16 )
-for i in "${!arr[@]}"; do 
+for i in "${!arr[@]}"; do # for (( i = 0; i < ${#arr[@]}; i++ )); do
   printf "%s\t%s\n" "$i" "${arr[$i]}"
 done
 ```
