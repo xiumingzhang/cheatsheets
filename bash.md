@@ -191,7 +191,7 @@ done
 ```
 arr=( 7 12 16 )
 for i in "${!arr[@]}"; do # for (( i = 0; i < ${#arr[@]}; i++ )); do
-  printf "%s\t%s\n" "$i" "${arr[$i]}"
+    printf "%s\t%s\n" "$i" "${arr[$i]}"
 done
 ```
 
