@@ -371,3 +371,44 @@ poseFiles=(/path/*.pkl)
 lsof -i :<port>
 kill -9 <PID>
 ```
+
+
+### Extract a column
+
+```
+30-103-178:~ x$ lsof -i :5901
+COMMAND  PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ssh     3751    x    6u  IPv6 0x92a5ebb41be479d3      0t0  TCP localhost:5901 (LISTEN)
+ssh     3751    x    7u  IPv4 0x92a5ebb42075b35b      0t0  TCP localhost:5901 (LISTEN)
+30-103-178:~ x$ lsof -i :5901 | tail -n1 | awk '{print $2;}'
+3751
+```
+
+
+### Single quotes inside single quotes
+
+```
+alias rxvt='urxvt -fg '"'"'#111111'"'"' -bg '"'"'#111111'"'"
+#                     ^^^^^       ^^^^^     ^^^^^       ^^^^
+#                     12345       12345     12345       1234
+```
+
+3 `'` is the quoted character.
+
+
+### Redirect (or slicence) `stdout` and `stderr`
+
+```
+# Send stdout to out.log, stderr to err.log
+myprogram > out.log 2> err.log
+
+# Send both stdout and stderr to out.log
+myprogram &> out.log      # New bash syntax
+myprogram > out.log 2>&1  # Older sh syntax
+
+# Log output, hide errors.
+myprogram > out.log 2> /dev/null
+
+# Hide both
+myprogram &> /dev/null
+```
