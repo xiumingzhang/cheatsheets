@@ -363,3 +363,11 @@ Filenames are NOT ordered.
 ```
 poseFiles=(/path/*.pkl)
 ```
+
+
+### Release a port
+
+```
+lsof -i :<port>
+kill -9 <PID>
+```
