@@ -31,13 +31,21 @@ git commit -m ".gitignore is now working"
 ### Make .gitignore ignore everything but a few files
 
 ```
-# Ignore everything
-*
-
-# But not these files
+# Ignore everything in root, except these files
+/*
 !.gitignore
-!script.pl
-!template.latex
+!.bash_profile
+!.gitconfig
+!.inputrc
+!.vimrc
+!README.md
+
+# Don't ignore .ssh folder
+!.ssh/
+
+# Ignore everything there except one file
+.ssh/*
+!.ssh/config
 ```
 
 
