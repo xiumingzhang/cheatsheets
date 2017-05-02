@@ -220,7 +220,7 @@ cp $(printf '%s\n' im???.jpg | awk 'NR%4 == 1') /some/place
 ```
 
 
-### Renaming files in a folder to sequential numbers
+### Rename files in a folder to sequential numbers
 
 ```
 a=1
