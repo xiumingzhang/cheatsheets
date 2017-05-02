@@ -412,12 +412,3 @@ myprogram > out.log 2> /dev/null
 # Hide both
 myprogram &> /dev/null
 ```
-
-
-### Rotate images in a folder
-
-```
-for file in ./*.png; do
-    convert "$file" -rotate 90 "${file%.png}"_rotated.png
-done
-```

@@ -122,3 +122,12 @@ where `H` and `W` should be replaced with the height and width of `bottom.png`, 
 ```
 convert in.png -pointsize 40 -fill red -annotate +100+100 'My Text' out.png
 ```
+
+
+### Rotate images in a folder
+
+```
+for file in ./*.png; do
+    convert "$file" -rotate 90 "${file%.png}"_rotated.png
+done
+```
