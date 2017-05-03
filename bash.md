@@ -199,7 +199,7 @@ done
 ### Remove the first 5 characters from each filename
 
 ```
-rename -n 's/(.{5})(.*)$/$2/' *.*
+rename -n 's/(.{5})(.*)$/$2/' *
 ```
 The `-n` is for simulating; remove it to get the actual result.
 
