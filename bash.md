@@ -412,3 +412,13 @@ myprogram > out.log 2> /dev/null
 # Hide both
 myprogram &> /dev/null
 ```
+
+
+### Get image dimensions
+
+```
+frameFile=$(ls ${frameDir}/*.png | head -1)
+wxh=$(file ${frameFile} | cut -d',' -f2) # get image dimensions
+w=$(echo ${wxh} | awk -F' x ' '{print $1}')
+h=$(echo ${wxh} | awk -F' x ' '{print $2}')
+```
