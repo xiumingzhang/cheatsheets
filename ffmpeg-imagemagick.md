@@ -81,7 +81,7 @@ convert -delay 20 -loop 0 nonloopingImage.gif loopingImage.gif
 ffmpeg -i B.png -i A.png -filter_complex "[0:v][1:v] overlay" out.png
 ```
 
-`[0:v][1:v]` means that we want the first video file we import with `-i` to be under video input file 1. `:v` just means we want video 0 and video 1. `[0:a]` would mean we want the first imported audio track.
+`[0:v][1:v]` means that we want the first video or image file we import with `-i` to be under the second video or image file.
 
 
 * **Scale** A before overlaying
