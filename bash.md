@@ -422,3 +422,37 @@ wxh=$(file ${frameFile} | cut -d',' -f2) # get image dimensions
 w=$(echo ${wxh} | awk -F' x ' '{print $1}')
 h=$(echo ${wxh} | awk -F' x ' '{print $2}')
 ```
+
+
+### Submit jobs to machines
+
+```
+CPUList=( 1 2 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19 21 22 23 24 25 26 28 30 31 32 33 34 35 36 37 38 )
+
+nMachines=${#CPUList[@]}
+
+# For every clip
+for clip in "${clips[@]}"; do
+    # For each frame
+    for (( i = 0; i < ${#frames[@]}; i++ )); do
+        cmd1="python test.py ${inDir} ${outDir}"
+        # Send the tasks to a machine
+        idx=${i}
+        while true; do
+            ID="${CPUList[$((idx%nMachines))]}"
+            status=`probeMachine.sh ${ID} 0`
+            if [[ ${status} == alive ]]; then
+                break
+            fi
+            idx=$((idx+1)) # next machine
+        done
+        printf -v ID "%02d" ${ID}
+        if [[ ! -e "${outDir}/result.pkl" ]]; then
+            ssh ${user}@vision${ID}.csail.mit.edu "${cmd0}; ${cmd1}; exit" &
+            echo "${clip}: ${frameName} submitted to vision${ID}"
+        else
+            echo "${clip}: ${frameName} done already"
+        fi
+    done
+done
+```
