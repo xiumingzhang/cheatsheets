@@ -135,7 +135,7 @@ fi
 ### Check if file exists
 
 ```
-if [ -e "$FILE" ]; then
+if [[ -e "$FILE" ]]; then
     # Will enter here if $FILE exists, even if it contains spaces
 fi
 ```
