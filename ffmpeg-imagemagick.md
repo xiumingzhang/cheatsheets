@@ -50,10 +50,10 @@ ffmpeg -framerate 2 -pattern_type glob -i "*.png" -pix_fmt yuv420p output.mp4
 * Filename of **certain length**
 
 ```
-ffmpeg -framerate 2 -pattern_type glob -i "???.png" -pix_fmt yuv420p output.mp4
+ffmpeg -framerate 2 -pattern_type glob -i "???.png" -pix_fmt yuv420p -y output.mp4
 ```
 
-`???.png` matches with all filenames of length 3.
+`???.png` matches with all filenames of length 3. `-y` overwrites without asking.
 
 * If **not divisible by 2** (specify height)
 
