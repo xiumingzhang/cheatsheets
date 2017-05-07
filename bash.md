@@ -456,3 +456,12 @@ for clip in "${clips[@]}"; do
     done
 done
 ```
+
+
+### SSH timeout
+
+```
+ssh -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no -q ${user}@vision${ID}.csail.mit.edu "exit"
+```
+
+`-o ConnectTimeout=10` sets timeout to be 10 seconds, `-o BatchMode=yes` keeps SSH from hanging with an unknown host and adds it to `known_host`, and `-o StrictHostKeyChecking=no` adds the fingerprint automatically (be careful!).
