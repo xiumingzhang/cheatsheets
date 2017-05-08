@@ -131,3 +131,9 @@ for file in ./*.png; do
     convert "$file" -rotate 90 "${file%.png}"_rotated.png
 done
 ```
+
+### Crop a video
+
+```
+ffmpeg -i gump_orig.mp4 -filter:v "crop=1280:520:0:100" gump.mp4
+```
