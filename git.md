@@ -56,3 +56,10 @@ If you want to list all the files currently being tracked under the branch maste
 ```
 git ls-tree -r master --name-only
 ```
+
+
+### See what has been changed by this commit
+
+```
+git diff <commit>^ <commit>
+```
