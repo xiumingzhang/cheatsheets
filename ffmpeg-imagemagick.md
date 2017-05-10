@@ -135,5 +135,5 @@ done
 ### Crop a video
 
 ```
-ffmpeg -i gump_orig.mp4 -filter:v "crop=1280:520:0:100" gump.mp4
+ffmpeg -i gump_orig.mp4 -vf "crop=<out_w>:<out_h>:<x>:<y>" gump.mp4
 ```
