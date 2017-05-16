@@ -465,3 +465,17 @@ ssh -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no -q ${user}
 ```
 
 `-o ConnectTimeout=10` sets timeout to be 10 seconds, `-o BatchMode=yes` keeps SSH from hanging with an unknown host and adds it to `known_host`, and `-o StrictHostKeyChecking=no` adds the fingerprint automatically (be careful!).
+
+
+### Case
+
+```
+case ${clip} in
+	"ballet1")
+    	eval "${cmd1}"
+		;;
+	*)
+		eval "${cmd2}"
+		;;
+esac
+```
