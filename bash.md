@@ -114,6 +114,17 @@ fi
 ```
 
 
+### Float comparison
+
+```
+num1=10
+num2=0.1
+if (( $(echo "$num1 > $num2" | bc -l) )); then
+    :
+fi
+```
+
+
 ### String equality
 
 ```
