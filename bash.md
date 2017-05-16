@@ -490,3 +490,10 @@ case ${clip} in
 		;;
 esac
 ```
+
+
+### Fast way of removing large/deep folder
+
+```
+mkdir empty_dir; rsync -a --delete empty_dir/ yourdirectory/
+```
