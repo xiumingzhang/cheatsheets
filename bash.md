@@ -497,3 +497,13 @@ esac
 ```
 mkdir empty_dir; rsync -a --delete empty_dir/ yourdirectory/
 ```
+
+
+### Shuffle array
+
+```
+arr=( 1 2 3 4 )
+arr_shuffled=( $(echo "${arr[@]}" | sed -r 's/(.[^;]*;)/ \1 /g' | tr " " "\n" | shuf | tr -d " " ) )
+echo "${arr_shuffled[@]}"
+2 4 3 1
+```
