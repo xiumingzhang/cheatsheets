@@ -507,3 +507,17 @@ arr_shuffled=( $(echo "${arr[@]}" | sed -r 's/(.[^;]*;)/ \1 /g' | tr " " "\n" | 
 echo "${arr_shuffled[@]}"
 2 4 3 1
 ```
+
+
+### `rsync`
+
+```
+rsync -avzhP --dry-run xiuming@visiongpu20.csail.mit.edu:/data/vision/billf/webCNN/xiuming ~/Desktop/output
+```
+
+`-v`: verbose
+`-r`: copies data recursively (but don’t preserve timestamps and permission while transferring data)
+`-a`: archive mode, archive mode allows copying files recursively and it also preserves symbolic links, file permissions, user & group ownerships and timestamps
+`-z`: compress file data
+`-h`: human-readable, output numbers in a human-readable format
+`-P`: show progress
