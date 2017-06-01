@@ -516,8 +516,28 @@ rsync -avzhP --dry-run xiuming@visiongpu20.csail.mit.edu:/data/vision/billf/webC
 ```
 
 `-v`: verbose
+
 `-r`: copies data recursively (but don’t preserve timestamps and permission while transferring data)
+
 `-a`: archive mode, archive mode allows copying files recursively and it also preserves symbolic links, file permissions, user & group ownerships and timestamps
+
 `-z`: compress file data
+
 `-h`: human-readable, output numbers in a human-readable format
+
 `-P`: show progress
+
+
+### Unzip
+
+```
+tar -xvzf images.tar.gz
+```
+
+`f`: this must be the last flag of the command, and the tar file must be immediately after. It tells tar the name and path of the compressed file
+
+`z`: tells tar to decompress the archive using g**z**ip
+
+`x`: tar can collect files or e**x**tract them. `x` does the latter
+
+`v`: verbose
