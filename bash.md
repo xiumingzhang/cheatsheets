@@ -541,3 +541,12 @@ tar -xvzf images.tar.gz
 `x`: tar can collect files or e**x**tract them. `x` does the latter
 
 `v`: verbose
+
+
+### Move all but one file
+
+```
+mv !(fileOne) ~/path/newFolder
+```
+
+with `shopt -s extglob` in `.bashrc`
