@@ -550,3 +550,10 @@ mv !(fileOne) ~/path/newFolder
 ```
 
 with `shopt -s extglob` in `.bashrc`
+
+
+### Sort results by `find` and print filename only
+
+```
+find ./ -maxdepth 1 -name '*.pkl' -printf "%f\n" | sort | head -1
+```
