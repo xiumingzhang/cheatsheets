@@ -132,8 +132,16 @@ for file in ./*.png; do
 done
 ```
 
+
 ### Crop a video
 
 ```
 ffmpeg -i gump_orig.mp4 -vf "crop=<out_w>:<out_h>:<x>:<y>" gump.mp4
+```
+
+
+### Get image info
+
+```
+identify -verbose im.tif
 ```
