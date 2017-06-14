@@ -29,7 +29,7 @@ grep -R 'string' dir/
 ### Remove all files but one
 
 ```
-find . ! -name 'toKeep.txt' -type f -exec rm -f {} +
+find . ! -name 'toKeep.txt' -type f -maxdepth 1 -exec rm -f {} +
 ```
 
 
@@ -222,6 +222,15 @@ v="some string.rtf"
 v2=${v::-4}
 echo "$v --> $v2"
 ```
+
+
+### Remove fixed prefix/suffix from a string
+
+```
+foo=${string#$prefix}
+foo=${string%$suffix}
+```
+There are also `##` and `%%`, which remove as much as possible if `$prefix` or `$suffix` contains wildcards.
 
 
 ### Copy every fourth file in a folder
