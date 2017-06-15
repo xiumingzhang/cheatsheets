@@ -452,12 +452,12 @@ ssh -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no -q ${user}
 
 ```
 case ${clip} in
-	"ballet1")
-    	eval "${cmd1}"
-		;;
-	*)
-		eval "${cmd2}"
-		;;
+    "ballet1")
+        eval "${cmd1}"
+        ;;
+    *)
+        eval "${cmd2}"
+        ;;
 esac
 ```
 
