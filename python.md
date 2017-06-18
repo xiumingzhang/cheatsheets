@@ -20,7 +20,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-fig = plt.figure()
+fig = plt.figure(figsize=(14, 14))
 ax = fig.add_subplot(311); img = ax.imshow(x / r); plt.colorbar(img, ax=ax)
 ax = fig.add_subplot(312); img = ax.imshow(y / r); plt.colorbar(img, ax=ax)
 ax = fig.add_subplot(313); img = ax.imshow(z / r); plt.colorbar(img, ax=ax)
