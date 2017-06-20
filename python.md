@@ -13,16 +13,20 @@ f.close()
 ```
 
 
-### Visualize matrix (single plot, colorbar, save without display, tight margins, resolution)
+### Visualize matrix (single plot, colorbar matches image height, save without display, tight margins, resolution)
 
 ```
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 
-plt.figure(figsize=(14, 14))
-plt.imshow(r)
-plt.colorbar()
+plt.figure(figsize=(14, 14)); ax = plt.gca()
+img = ax.imshow(r)
+# Create an axes on the right side of ax. The width of cax will be 2%
+# of ax and the padding between cax and ax will be fixed at 0.1 inch.
+cax = make_axes_locatable(ax).append_axes('right', size='2%', pad=0.1)
+plt.colorbar(img, cax=cax)
 plt.savefig('debug_r.png', bbox_inches='tight')
 ```
 
