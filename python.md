@@ -44,3 +44,10 @@ ax = fig.add_subplot(312); ax.set_title(r'$y$'); img = ax.imshow(y); plt.colorba
 ax = fig.add_subplot(313); ax.set_title(r'$z$'); img = ax.imshow(z); plt.colorbar(img, ax=ax)
 fig.savefig('debug_xyz.png', bbox_inches='tight')
 ```
+
+
+### Unique rows of matrix
+
+```
+np.vstack({tuple(row) for row in a})
+```
