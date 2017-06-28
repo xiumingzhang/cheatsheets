@@ -51,3 +51,20 @@ fig.savefig('debug_xyz.png', bbox_inches='tight')
 ```
 np.vstack({tuple(row) for row in a})
 ```
+
+
+### Insert multiple lines
+
+```
+w, h = 5, 5
+lines = [None] * (w + 1 + h + 1)
+for i in range(h + 1):
+	lines[i] = [(0, i), (w, i)] # [(x1, y1), (x2, y2)]
+	for i in range(w + 1):
+		lines[h + 1 + i] = [(i, 0), (i, h)]
+lc = collections.LineCollection(lines, colors='k', linewidths=1)
+ax.add_collection(lc)
+ax.set_xlim((0, w))
+ax.set_ylim((0, h))
+ax.set_aspect('equal')
+```
