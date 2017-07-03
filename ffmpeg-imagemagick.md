@@ -140,6 +140,13 @@ ffmpeg -i gump_orig.mp4 -vf "crop=<out_w>:<out_h>:<x>:<y>" gump.mp4
 ```
 
 
+### Crop an image
+
+```
+ffmpeg -i in.png -vf "crop=<out_w>:<out_h>:<x>:<y>" out.png
+```
+
+
 ### Get image info
 
 ```
