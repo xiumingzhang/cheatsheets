@@ -307,7 +307,7 @@ sed '68q;d' param1.csv
 ```
 #!/bin/bash
 echo before comment
-: <<'END'
+: <<-'END'
 bla bla
 blurfl
 END
