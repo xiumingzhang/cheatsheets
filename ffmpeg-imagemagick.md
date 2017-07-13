@@ -68,6 +68,13 @@ ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=1280:-2 -pix_fmt yu
 ```
 
 
+### Make GIF
+
+```
+convert -delay 20 -loop 0 *jpg animated.gif
+```
+
+
 ### Make GIF Loop
 
 ```
