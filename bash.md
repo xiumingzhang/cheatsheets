@@ -534,3 +534,19 @@ find ./ -maxdepth 1 -name '*.pkl' -printf "%f\n" | sort | head -1
 ```
 ldconfig -p | grep libx264.so
 ```
+
+
+### Replace character in string with another character
+
+```
+foo="1 2 3"
+bar=${foo/ /-}
+```
+
+replaces first blank only.
+
+```
+bar=${foo// /-}
+```
+
+replaces all blanks.
