@@ -561,11 +561,41 @@ q w e r
 ```
 
 
-### Unpack elements from array
+### Dictionary
 
 ```
-arr=( 1 2 3 )
+declare -A dict=( [key1]="1,2,3 a,b,c" [key2]="1 x" )
 
-# read content in 3 variables
-read e1 e2 e3 <<< "${arr[@]}"
+key=key1
+echo ${dict[${key}]}
+```
+
+
+### Read space-delimited strings into array
+
+```
+read -r -a arr <<< "first,string second,string"
+
+echo ${arr[0]}
+echo ${arr[1]}
+```
+
+
+### Unpack elements from string
+
+```
+arr=( 1 2 3 4 )
+read -r e1 e2 e3 _ <<< "${arr}"
+
+echo ${e1}
+echo ${e2}
+echo ${e3}
+```
+
+
+### Parse elements by delimiter
+
+```
+strarr=1,2,3,4
+IFS=, read -r e1 e2 e3 _ <<< "${strarr}"
 ```
