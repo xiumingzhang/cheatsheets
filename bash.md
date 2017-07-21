@@ -550,3 +550,12 @@ bar=${foo// /-}
 ```
 
 replaces all blanks.
+
+
+### Slice array
+
+```
+$ foo=(q w e r t y u)
+$ echo "${foo[@]:0:4}"
+q w e r
+```
