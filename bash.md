@@ -559,3 +559,13 @@ $ foo=(q w e r t y u)
 $ echo "${foo[@]:0:4}"
 q w e r
 ```
+
+
+### Unpack elements from array
+
+```
+arr=( 1 2 3 )
+
+# read content in 3 variables
+read e1 e2 e3 <<< "${arr[@]}"
+```
