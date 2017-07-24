@@ -599,3 +599,12 @@ echo ${e3}
 strarr=1,2,3,4
 IFS=, read -r e1 e2 e3 _ <<< "${strarr}"
 ```
+
+
+### Loop through lines in file
+
+```
+while read p; do
+    echo $p
+done <filelist.txt
+```
