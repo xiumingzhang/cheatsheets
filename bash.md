@@ -608,3 +608,11 @@ while read p; do
     echo $p
 done <filelist.txt
 ```
+
+When in conflict with breaking from another while loop, use the following instead.
+
+```
+for line in `cat "${filepath}"`; do
+    echo $line
+done
+```
