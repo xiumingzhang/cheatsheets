@@ -465,7 +465,7 @@ esac
 ### Fast way of removing large/deep folder
 
 ```
-mkdir empty_dir; rsync -a --delete empty_dir/ yourdirectory/
+mkdir empty_dir; rsync -a --delete empty_dir/ your_dir/; rm -rf  empty_dir/
 ```
 
 
