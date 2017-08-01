@@ -115,6 +115,15 @@ ffmpeg -i a.jpg -i b.jpg -filter_complex hstack output
 ```
 
 
+### Horizontally stack two images; need to rescale one
+
+```
+ffmpeg -i left.png -i right.png -filter_complex '[1][0]scale2ref=ih*(W/H):ih[2nd][ref];[ref][2nd]hstack' out.png
+```
+
+where `H` and `W` should be replaced with the height and width of `right.png`, respectively.
+
+
 ### Vertically stack two images; need to rescale one
 
 ```
