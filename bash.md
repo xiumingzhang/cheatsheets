@@ -616,3 +616,10 @@ for line in `cat "${filepath}"`; do
     echo $line
 done
 ```
+
+
+### Reveal which .so linked to a bin
+
+```
+ldd ${CAFFE_DIR}/bin/caffe | grep boost
+```
