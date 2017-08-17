@@ -618,7 +618,7 @@ done
 ```
 
 
-### Reveal which .so linked to a bin
+### Reveal .so linked to a binary
 
 ```
 ldd ${CAFFE_DIR}/bin/caffe | grep boost
