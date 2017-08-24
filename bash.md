@@ -625,7 +625,7 @@ ldd ${CAFFE_DIR}/bin/caffe | grep boost
 ```
 
 
-# Get over "device or resource busy"
+### Get over "device or resource busy"
 
 ```
 lsof +D <path>
