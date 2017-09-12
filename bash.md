@@ -105,6 +105,22 @@ du -sh ./*
 ```
 
 
+### Or, and, not in if
+
+```
+a=true
+b=false
+
+if ${a} || ${b}; then
+    echo true
+fi
+
+if ${a} && ! ${b}; then
+    echo true
+fi
+```
+
+
 ### Numeric equality
 
 ```
