@@ -29,7 +29,7 @@ grep -R 'string' dir/
 ### Remove all files but one
 
 ```
-find . ! -name 'toKeep.txt' -type f -maxdepth 1 -exec rm -f {} +
+find . ! -name 'to-keep.txt' -type f -maxdepth 1 -exec rm -f {} +
 ```
 
 
@@ -84,10 +84,10 @@ echo "abc : def" | awk -F' : ' '{print $1}'
 ### Split string into an array by delimeter
 
 ```
-IN="bla@some.com;john@home.com"
-arrIN=(${IN//;/ })
-echo ${arrIN[0]}
-echo ${arrIN[1]}
+str="bla@some.com;john@home.com"
+arr=(${str//;/ })
+echo ${arr[0]}
+echo ${arr[1]}
 ```
 
 
@@ -392,8 +392,17 @@ Filenames are NOT ordered.
 ### Collect filenames into an array
 
 ```
-poseFiles=(/path/*.pkl)
+files=(/path/*.pkl)
 ```
+
+
+### Find latest file in directory
+
+```
+ls -t *.png | head -1
+```
+
+Sort by time with `-t`. Grab the first (newest) with `head -1`.
 
 
 ### Release a port
