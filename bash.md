@@ -656,3 +656,12 @@ ldd ${CAFFE_DIR}/bin/caffe | grep boost
 lsof +D <path>
 kill -9 <PID>
 ```
+
+
+### Print formatted string to variable
+
+```
+printf -v my_str "%03d" "${my_int}"
+```
+
+Useful for prepending zeros to integers.
