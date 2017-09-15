@@ -672,3 +672,13 @@ Useful for prepending zeros to integers.
 ```
 [[ $var =~ ^-?[0-9]+$ ]]
 ```
+
+
+### Loop through files in reverse order
+
+```
+files=(/var/logs/foo*.log)
+for ((i=${#files[@]}-1; i>=0; i--)); do
+    bar "${files[$i]}"
+done
+```
