@@ -665,3 +665,10 @@ printf -v my_str "%03d" "${my_int}"
 ```
 
 Useful for prepending zeros to integers.
+
+
+### Check if string is valid as an integer
+
+```
+[[ $var =~ ^-?[0-9]+$ ]]
+```
