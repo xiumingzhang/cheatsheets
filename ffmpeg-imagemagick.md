@@ -1,4 +1,4 @@
-### Cut Video
+### Cut video
 
 ```
 ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
@@ -75,7 +75,7 @@ convert -delay 20 -loop 0 *jpg animated.gif
 ```
 
 
-### Make GIF Loop
+### Make GIF loop
 
 ```
 convert -delay 20 -loop 0 nonloopingImage.gif loopingImage.gif
