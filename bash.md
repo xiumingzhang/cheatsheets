@@ -682,3 +682,10 @@ for ((i=${#files[@]}-1; i>=0; i--)); do
     bar "${files[$i]}"
 done
 ```
+
+
+### Show image info
+
+```
+file /path/to/img.png
+```
