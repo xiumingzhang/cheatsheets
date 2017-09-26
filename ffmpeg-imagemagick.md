@@ -168,3 +168,12 @@ ffmpeg -i in.png -vf "crop=<out_w>:<out_h>:<x>:<y>" out.png
 ```
 identify -verbose im.tif
 ```
+
+
+### Photo montage
+
+```
+montage [0-5].png -tile 5x1 -geometry +0+0 out.png
+```
+
+ImageMagick ships with the `montage` utility. Montage will append each image side-by-side allowing you to adjust spacing between each image (`-geometry`), and the general layout (`-tile`).
