@@ -11,7 +11,7 @@ make install
 ### CMake (passing in library file, include dir, lib root/home, make install prefix)
 
 ```
-# Inside build build
+# Inside build folder
 cmake /source/folder \
 -DTIFF_LIBRARY=/tiff_build/lib/libtiff.so \
 -DTIFF_INCLUDE_DIR=/tiff_build/include \
