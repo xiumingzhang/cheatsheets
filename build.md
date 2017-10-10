@@ -1,6 +1,7 @@
 # General
 
-### Configure
+## Configure
+
 ```
 ./configure --prefix=/my/nfs/build/folder
 
@@ -8,24 +9,36 @@ make -j
 make install
 ```
 
-### CMake (passing in library file, include dir, lib root/home, make install prefix)
+## CMake
+
 ```
 # Inside build folder
-cmake /source/folder \
--DTIFF_LIBRARY=/tiff_build/lib/libtiff.so \
--DTIFF_INCLUDE_DIR=/tiff_build/include \
--DOPENEXR_HOME=/openexr_build/ \
--DBOOST_ROOT=/boost_1_64_0/ \
--DCMAKE_INSTALL_PREFIX=/my/nfs/build/folder
+cmake /src/folder -DCMAKE_INSTALL_PREFIX=/my/nfs/build/folder
 
 make -j
 make install
 ```
 
+### Passing in lib file, include dir, lib root/home
+```
+-DTIFF_LIBRARY=/tiff_build/lib/libtiff.so \
+-DTIFF_INCLUDE_DIR=/tiff_build/include \
+-DOPENEXR_HOME=/openexr_build/ \
+-DBOOST_ROOT=/boost_1_64_0/
+```
+
+### Lib and include dir to search first
+```
+-DCMAKE_LIBRARY_PATH=$SHAPETIME_DIR/software/Anaconda3-4.3.1-Linux-x86_64/lib \
+-DCMAKE_INCLUDE_PATH=$SHAPETIME_DIR/software/Anaconda3-4.3.1-Linux-x86_64/include
+```
+
+
 
 # Specific
 
-### Blender as Python Module
+## Blender as Python Module
+
 Built on `tuesday` with
 ```
 cmake ../blender \
@@ -61,6 +74,8 @@ cmake ../blender \
 -DCMAKE_LIBRARY_PATH=$SHAPETIME_DIR/software/Anaconda3-4.3.1-Linux-x86_64/lib \
 -DCMAKE_INCLUDE_PATH=$SHAPETIME_DIR/software/Anaconda3-4.3.1-Linux-x86_64/include
 ```
+
+### Caveats
 FFmpeg has to be compiled with `-fPIC`:
 ```
 ./configure --enable-shared --prefix=$MOON_DIR/software/ffmpeg_build/
