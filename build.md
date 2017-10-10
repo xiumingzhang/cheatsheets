@@ -59,7 +59,7 @@ cmake ../blender \
 -DFFMPEG=$MOON_DIR/software/ffmpeg_build \
 -DCMAKE_INSTALL_PREFIX=$MOON_DIR/software/blender_build
 ```
-FFMPEG has to be compiled with `-fPIC`:
+FFmpeg has to be compiled with `-fPIC`:
 ```
 ./configure --enable-shared --prefix=$MOON_DIR/software/ffmpeg_build/
 ```
