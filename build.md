@@ -57,7 +57,9 @@ cmake ../blender \
 -DWITH_PLAYER=OFF \
 -DWITH_PYTHON_MODULE=ON \
 -DFFMPEG=$MOON_DIR/software/ffmpeg_build \
--DCMAKE_INSTALL_PREFIX=$MOON_DIR/software/blender_build
+-DCMAKE_INSTALL_PREFIX=$MOON_DIR/software/blender_build \
+-DCMAKE_LIBRARY_PATH=$SHAPETIME_DIR/software/Anaconda3-4.3.1-Linux-x86_64/lib \
+-DCMAKE_INCLUDE_PATH=$SHAPETIME_DIR/software/Anaconda3-4.3.1-Linux-x86_64/include
 ```
 FFmpeg has to be compiled with `-fPIC`:
 ```
