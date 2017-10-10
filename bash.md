@@ -643,10 +643,14 @@ done
 ```
 
 
-### Reveal .so linked to a binary
+### Reveal .so library
 
 ```
 ldd ${CAFFE_DIR}/bin/caffe | grep boost
+```
+
+```
+ldd ${MOON_DIR}/software/blender_build/bpy.so | grep libpng
 ```
 
 
