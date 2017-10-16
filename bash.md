@@ -130,6 +130,13 @@ fi
 ```
 
 
+### Mod
+
+```
+$((i%n_per_session))
+```
+
+
 ### Float comparison
 
 ```
