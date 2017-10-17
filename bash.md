@@ -230,6 +230,21 @@ done
 ```
 
 
+### Batch rename
+
+```
+#!/usr/bin/env bash
+
+for cat_dir in ./jobs/*; do
+    for obj_file in $cat_dir/*.m; do
+        xpath=${obj_file%/*}
+        xbase=${obj_file##*/}
+        echo "$obj_file -> $xpath/prefix_$xbase"
+    done
+done
+```
+
+
 ### Remove the first 5 characters from each filename
 
 ```
@@ -610,6 +625,22 @@ read -r -a arr <<< "first,string second,string"
 
 echo ${arr[0]}
 echo ${arr[1]}
+```
+
+
+### Read lines of file into array
+
+```
+readarray a < /path/to/filename
+```
+
+
+### First N characters of a string variable
+
+```
+a=g16
+echo ${a:0:1}
+echo ${a:0:2}
 ```
 
 
