@@ -731,3 +731,10 @@ done
 ```
 file /path/to/img.png
 ```
+
+
+### Unique elements of array
+
+```
+sorted_unique_ids=($(echo "${ids[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
+```
