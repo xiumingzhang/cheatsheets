@@ -738,3 +738,13 @@ file /path/to/img.png
 ```
 sorted_unique_ids=($(echo "${ids[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
 ```
+
+
+### Substring
+
+```
+string='My long string'
+if [[ $string == *"My long"* ]]; then
+  echo "It's there!"
+fi
+```
