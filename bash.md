@@ -748,3 +748,14 @@ if [[ $string == *"My long"* ]]; then
   echo "It's there!"
 fi
 ```
+
+
+### `ls` with error handling
+
+```
+if ls "${out_dir}"/*.blend 1> /dev/null 2>&1; then
+    first_file=$(ls "${out_dir}"/*.blend | head -1)
+else
+    first_file=none
+fi
+```
