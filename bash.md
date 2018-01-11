@@ -759,3 +759,11 @@ else
     first_file=none
 fi
 ```
+
+
+### Number range in regex
+
+```
+cp 0[2-9]?.npz ./
+```
+copies `020.npz`, `021.npz`, ..., `030.npz`, ..., `099.npz`.
