@@ -67,6 +67,14 @@ ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=-2:720 -pix_fmt yuv
 ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=1280:-2 -pix_fmt yuv420p output.mp4
 ```
 
+* Start from and end at
+
+```
+ffmpeg -start_number 250 -i img_%4d.jpg -vframes 500 -vcodec mpeg4 output.mp4
+```
+
+combines `img_0250.jpg` through `img_0750.jpg`.
+
 
 ### Make GIF
 
