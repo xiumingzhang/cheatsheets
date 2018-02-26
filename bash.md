@@ -767,3 +767,11 @@ fi
 cp 0[2-9]?.npz ./
 ```
 copies `020.npz`, `021.npz`, ..., `030.npz`, ..., `099.npz`.
+
+
+### Generate a number sequence
+```
+me@host:~$ vals=($(seq 0 1 10))
+me@host:~$ echo "${vals[@]}"
+0 1 2 3 4 5 6 7 8 9 10
+```
