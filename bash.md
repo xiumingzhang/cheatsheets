@@ -667,10 +667,12 @@ IFS=, read -r e1 e2 e3 _ <<< "${strarr}"
 ### Loop through lines in file
 
 ```
-while read p; do
-    echo $p
-done <filelist.txt
+while read c; do
+    ssh -n "$me@$host" "$c; exit" &
+done <cmd_list.txt
 ```
+
+By default, `ssh` reads from `stdin`, which is your input file. As a result, you only see the first line processed, because `ssh` consumes the rest of the file, and your `while` loop terminates. To prevent this, pass the `-n` option to your `ssh` command to make it read from `/dev/null` instead of `stdin`.
 
 When in conflict with breaking from another while loop, use the following instead.
 
