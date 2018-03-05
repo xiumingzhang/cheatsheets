@@ -784,3 +784,9 @@ me@host:~$ ind=($(seq 0 1 $((${#arr[@]}-1))))
 me@host:~$ echo "${vals[@]}"
 0 1 2 3 4 5 6 7 8 9
 ```
+
+
+### Check `sudo` commands on machine
+```
+sudo cat /var/log/auth.log | grep sudo
+```
