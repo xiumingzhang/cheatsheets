@@ -790,3 +790,11 @@ me@host:~$ echo "${vals[@]}"
 ```
 sudo cat /var/log/auth.log | grep sudo
 ```
+
+
+### Configure, make, make install
+```
+./configure --prefix=/my/nfs/dir
+make -j
+make install
+```
