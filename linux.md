@@ -792,9 +792,8 @@ sudo cat /var/log/auth.log | grep sudo
 ```
 
 
-### Configure, make, make install
+### Replace string in file
 ```
-./configure --prefix=/my/nfs/dir
-make -j
-make install
+sed -i -e 's/abc/XYZ/g' /tmp/file.txt
 ```
+replaces `abc` with `XYZ` in file `/tmp/file.txt`.
