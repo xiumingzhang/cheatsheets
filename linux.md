@@ -774,6 +774,7 @@ copies `020.npz`, `021.npz`, ..., `030.npz`, ..., `099.npz`.
 
 
 ### Generate a number sequence
+
 ```
 me@host:~$ vals=($(seq 0 1 10))
 me@host:~$ echo "${vals[@]}"
@@ -789,6 +790,7 @@ me@host:~$ echo "${vals[@]}"
 
 
 ### Check `sudo` commands on machine
+
 ```
 sudo cat /var/log/auth.log | grep sudo
 ```
@@ -799,3 +801,18 @@ sudo cat /var/log/auth.log | grep sudo
 sed -i -e 's/abc/XYZ/g' /tmp/file.txt
 ```
 replaces `abc` with `XYZ` in file `/tmp/file.txt`.
+
+
+### Return Python list to bash
+
+```
+result_arr=($(python script.py param1 param2 | tr -d '[],'))
+echo "${result_arr[@]}"
+```
+
+
+### Strip single quotes for each element of an array
+
+```
+abc=(${abc[@]//\'/})
+```
