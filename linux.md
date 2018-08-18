@@ -820,22 +820,22 @@ abc=(${abc[@]//\'/})
 
 ### Call functions defined in `.bashrc`
 
-Options:
+Do any of the following.
 
-1. Source `.bashrc` explicitly:
+* Source `.bashrc` explicitly:
     ```
     #!/bin/bash
     . ~/.bashrc
     exr2npz "foo" "bar"
     ```
 
-2. Start bash with the interactive flag:
+* Start bash with the interactive flag:
     ```
     #!/bin/bash -i
     exr2npz "foo" "bar"
     ```
 
-3. Set `BASH_ENV` when you start your script:
+* Set `BASH_ENV` when you start your script:
     ```
     BASH_ENV=$HOME/.bashrc /path/to/my/script
     ```
