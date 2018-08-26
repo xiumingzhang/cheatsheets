@@ -1,3 +1,3 @@
 # cheatsheets
 
-Local location: /Users/x/Dropbox\ \(MIT\)/Notes/cheatsheets
+Local location: `~/Dropbox\ \(MIT\)/Notes/cheatsheets`
