@@ -561,6 +561,10 @@ tar -xvzf images.tar.gz
 
 `v`: verbose
 
+```
+tar -xvf yourfile.tar
+```
+
 
 ### Move all but one file
 
