@@ -4,7 +4,7 @@
 ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
 ```
 
-* Also remove sound and **convert format**
+* To also remove sound and **convert format**
 
 ```
 ffmpeg -i sintel.avi -ss 0:9:37.0 -c copy -to 0:9:40.50 -an bigFight.mp4
@@ -192,3 +192,19 @@ ImageMagick ships with the `montage` utility. Montage will append each image sid
 ```
 convert image.png -background white -alpha remove white.png
 ```
+
+
+### Change video speed
+
+```
+ffmpeg -i input.mkv -filter:v "setpts=PTS/60" output.mkv 
+```
+speeds up the video by 60x.
+
+
+### Replace image alpha background with a pure color
+
+```
+ffmpeg -i in.png -filter_complex "color=black,format=rgb24[c];[c][0]scale2ref[c][i];[c][i]overlay=format=auto:shortest=1,setsar=1" out.png
+```
+overlays the image with alpha on top of a `black` canvas.
