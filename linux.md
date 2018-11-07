@@ -546,6 +546,13 @@ rsync -avzhP --dry-run xiuming@visiongpu20.csail.mit.edu:/data/vision/billf/webC
 `--remove-source-files`
 
 
+### Zip
+
+```
+zip myzip file1 file2 file3
+```
+
+
 ### Unzip
 
 ```
