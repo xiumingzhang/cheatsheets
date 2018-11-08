@@ -549,8 +549,9 @@ rsync -avzhP --dry-run xiuming@visiongpu20.csail.mit.edu:/data/vision/billf/webC
 ### Zip
 
 ```
-zip myzip file1 file2 file3
+zip -j myzip file1 file2 file3
 ```
+stores just the name of a saved file (junks the path), and does not store directory names.
 
 
 ### Unzip
