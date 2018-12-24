@@ -17,14 +17,10 @@ git reset --soft HEAD^
 
 
 ```
-# rm all files
+cd "$repo_root"
 git rm -r --cached .
-
-# add all files as per new .gitignore
 git add .
-
-# now, commit for new .gitignore to apply
-git commit -m ".gitignore is now working"
+git commit -m "resync with new .gitignore"
 ```
 
 

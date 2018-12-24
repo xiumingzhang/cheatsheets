@@ -83,6 +83,13 @@ convert -delay 20 -loop 0 *jpg animated.gif
 ```
 
 
+### Crop GIF
+
+```
+convert in.gif -coalesce -repage 0x0 -crop WxH+X+Y +repage out.gif
+```
+
+
 ### Make GIF loop
 
 ```
