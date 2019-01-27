@@ -54,7 +54,27 @@ git ls-tree -r master --name-only
 ```
 
 
-### See what has been changed by this commit
+### List commits
+
+```
+git log
+```
+
+
+### See what has been changed by a commit
+
+```
+git show <commit>
+```
+
+Just filenames?
+
+```
+git show --name-only <commit>
+```
+
+
+### Compare what has changed between two commits
 
 ```
 git diff <commit>^ <commit>
