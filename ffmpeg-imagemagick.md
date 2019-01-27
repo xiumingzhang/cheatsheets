@@ -215,3 +215,20 @@ speeds up the video by 60x.
 ffmpeg -i in.png -filter_complex "color=black,format=rgb24[c];[c][0]scale2ref[c][i];[c][i]overlay=format=auto:shortest=1,setsar=1" out.png
 ```
 overlays the image with alpha on top of a `black` canvas.
+
+
+### Extract audio from video
+
+```
+ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac
+```
+
+
+### Replace audio in video
+
+```
+ffmpeg -i v.mp4 -i a.wav -c:v copy -map 0:v:0 -map 1:a:0 new.mp4
+```
+
+`-map 0:v:0` maps the first (index 0) video stream from the input to the first (index 0) video stream in the output.
+`-map 1:a:0` maps the second (index 1) audio stream from the input to the first (index 0) audio stream in the output.
