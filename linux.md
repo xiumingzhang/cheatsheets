@@ -850,3 +850,12 @@ Do any of the following.
     ```
     BASH_ENV=$HOME/.bashrc /path/to/my/script
     ```
+
+
+### When the username gets truncated by `+` in `top`
+
+Use the "long-username version" of `ps -aux`
+
+```
+ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
+```
