@@ -210,6 +210,17 @@ fi
 ```
 
 
+### Until string is empty
+
+```
+pid=$(...)
+until [ -z "$pid" ]; do
+    kill -9 "$pid"
+    pid=$(...)
+done
+```
+
+
 ### Loop through elements in array
 
 ```
