@@ -870,3 +870,10 @@ Use the "long-username version" of `ps -aux`
 ```
 ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
 ```
+
+
+### Send a command to run in background on a remote machine
+
+```
+ssh -n -f user@host "sh -c 'cd /whereever; nohup ./whatever > /dev/null 2>&1 &'"
+```
