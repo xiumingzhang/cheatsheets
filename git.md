@@ -79,3 +79,12 @@ git show --name-only <commit>
 ```
 git diff <commit>^ <commit>
 ```
+
+
+### Find the deleted from commit history
+
+```
+git log -S<string>
+```
+
+Then you can find the most recent commit that essentially did the deletion.
