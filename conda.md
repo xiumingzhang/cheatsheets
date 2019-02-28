@@ -33,6 +33,13 @@ conda env create -f environment.yml
 ```
 
 
+### Install packages to environment
+
+```
+conda install --name myenv scipy
+```
+
+
 ### Rollback
 
 Locate the version before the screwup with
