@@ -91,6 +91,17 @@ echo ${arr[1]}
 ```
 
 
+### String starts with
+
+```
+# The == comparison operator behaves differently within a double-brackets
+# test than within single brackets.
+
+[[ $a == z* ]]   # True if $a starts with a "z" (wildcard matching).
+[[ $a == "z*" ]] # True if $a is equal to z* (literal matching).
+```
+
+
 ### Free space available in current directory
 
 ```
