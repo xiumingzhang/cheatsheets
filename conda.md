@@ -33,6 +33,14 @@ conda env create -f environment.yml
 ```
 
 
+### Rename environment
+
+```
+conda create --name new_name --clone old_name
+conda remove --name old_name --all # or its alias: `conda env remove --name old_name`
+```
+
+
 ### Install packages to environment
 
 ```
