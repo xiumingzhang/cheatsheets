@@ -138,6 +138,8 @@ ffmpeg -i left.png -i right.png -filter_complex '[1][0]scale2ref=ih*(W/H):ih[2nd
 
 where `H` and `W` should be replaced with the height and width of `right.png`, respectively.
 
+If calling this from Python, you may need to remove the quotes.
+
 
 ### Vertically stack two images/videos; need to rescale one
 
