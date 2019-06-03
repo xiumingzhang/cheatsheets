@@ -6,24 +6,24 @@ ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
 
 * To also remove sound and **convert format**
 
-```
-ffmpeg -i sintel.avi -ss 0:9:37.0 -c copy -to 0:9:40.50 -an bigFight.mp4
-```
+	```
+	ffmpeg -i sintel.avi -ss 0:9:37.0 -c copy -to 0:9:40.50 -an bigFight.mp4
+	```
 
 
 ### Scale image
 
 * Specify width
 
-```
-ffmpeg -i in.png -vf scale=iw/2:-1 out.png
-```
+	```
+	ffmpeg -i in.png -vf scale=iw/2:-1 out.png
+	```
 
 * Specify height
 
-```
-ffmpeg -i in.png -vf scale=-1:ih/2 out.png
-```
+	```
+	ffmpeg -i in.png -vf scale=-1:ih/2 out.png
+	```
 
 
 ### Convert format
@@ -37,43 +37,53 @@ ffmpeg -i dense.avi -c:v libx264 noDepth.mp4
 
 * **Numeric** filename
 
-```
-ffmpeg -framerate 20 -start_number 1 -i %3d_0zz.png -vf fps=20 -pix_fmt yuv420p output.mp4
-```
+	```
+	ffmpeg -framerate 20 -start_number 1 -i %3d_0zz.png -vf fps=20 -pix_fmt yuv420p output.mp4
+	```
 
 * **Character** filename
 
-```
-ffmpeg -framerate 2 -pattern_type glob -i "*.png" -pix_fmt yuv420p output.mp4
-```
+	```
+	ffmpeg -framerate 2 -pattern_type glob -i "*.png" -pix_fmt yuv420p output.mp4
+	```
 
 * Filename of **certain length**
 
-```
-ffmpeg -framerate 2 -pattern_type glob -i "???.png" -pix_fmt yuv420p -y output.mp4
-```
+	```
+	ffmpeg -framerate 2 -pattern_type glob -i "???.png" -pix_fmt yuv420p -y output.mp4
+	```
 
-`???.png` matches with all filenames of length 3. `-y` overwrites without asking.
+	`???.png` matches with all filenames of length 3. `-y` overwrites without asking.
 
 * If **not divisible by 2** (specify height)
 
-```
-ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=-2:720 -pix_fmt yuv420p output.mp4
-```
+	```
+	ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=-2:720 -pix_fmt yuv420p output.mp4
+	```
 
 * If not divisible by 2 (specify width)
 
-```
-ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=1280:-2 -pix_fmt yuv420p output.mp4
-```
+	```
+	ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=1280:-2 -pix_fmt yuv420p output.mp4
+	```
 
 * Start from and end at
 
-```
-ffmpeg -start_number 250 -i img_%4d.jpg -vframes 500 -vcodec mpeg4 output.mp4
-```
+	```
+	ffmpeg -start_number 250 -i img_%4d.jpg -vframes 500 -vcodec mpeg4 output.mp4
+	```
 
-combines `img_0250.jpg` through `img_0750.jpg`.
+	combines `img_0250.jpg` through `img_0750.jpg`.
+
+* If **high quality** is required
+
+	Set bitrate (around 5 Mbits/s for DVD) and codec by adding flags:
+
+	```
+	-b 5000k -vcodec libx264
+	```
+
+	If no H.264 support, use `-vcodec mpeg4`.
 
 
 ### Make GIF
@@ -108,19 +118,19 @@ ffmpeg -i B.png -i A.png -filter_complex "[0:v][1:v] overlay" out.png
 
 * **Scale** A before overlaying
 
-```
-ffmpeg -i B.png -i A.png -filter_complex "[1]scale=iw/2:-1[b];[0:v][b] overlay" out.png
-```
+	```
+	ffmpeg -i B.png -i A.png -filter_complex "[1]scale=iw/2:-1[b];[0:v][b] overlay" out.png
+	```
 
-`[1]` is short for "pick the best matching stream" (`[1:v]` is short for pick the best matching video stream -- same thing in this case) and `[b]` is the label for the scale output which is then fed to the overlay.
+	`[1]` is short for "pick the best matching stream" (`[1:v]` is short for pick the best matching video stream -- same thing in this case) and `[b]` is the label for the scale output which is then fed to the overlay.
 
 * **Make transparent** A before overlaying
 
-```
-ffmpeg -i B.png -i A.png -filter_complex "[1]format=argb,geq=r='r(X,Y)':a='0.5*alpha(X,Y)'[b];[0:v][b] overlay" out.png
-```
+	```
+	ffmpeg -i B.png -i A.png -filter_complex "[1]format=argb,geq=r='r(X,Y)':a='0.5*alpha(X,Y)'[b];[0:v][b] overlay" out.png
+	```
 
-`0.5` is the opacity factor. I'm including `format=argb` so that it also works with overlay images that don't have an alpha channel of themselves.
+	`0.5` is the opacity factor. I'm including `format=argb` so that it also works with overlay images that don't have an alpha channel of themselves.
 
 
 ### Horizontally stack two images/videos
