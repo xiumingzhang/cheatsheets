@@ -194,8 +194,6 @@ if (! (( var == 2 || var < 30 ))) && [[ ${str} == abc ]]; then
 fi
 ```
 
-If (not ((var == 2) or (var < 30)) and (str is abc))
-
 
 ### Loop through only directories
 
