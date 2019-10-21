@@ -571,10 +571,11 @@ rsync -avzhP --dry-run xiuming@visiongpu20.csail.mit.edu:/data/vision/billf/webC
 ```
 zip -j myzip file1 file2 file3
 ```
-stores just the name of a saved file (junks the path), and does not store directory names.
+stores just the names of the files, and does not store directory names (junks the paths).
 
 ```
-zip -r myzip directory/
+cd <dir_you_want_to_be_the_zip_root>
+zip -r myzip <relative_dir>
 ```
 recursively zips the files, maintaining the file structure.
 
