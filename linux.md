@@ -594,8 +594,16 @@ tar -xvzf images.tar.gz
 
 `v`: verbose
 
+or
+
 ```
 tar -xvf yourfile.tar
+```
+
+or
+
+```
+unzip yourfile.zip [-d /dst_folder/]
 ```
 
 
