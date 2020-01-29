@@ -33,6 +33,27 @@ ffmpeg -i dense.avi -c:v libx264 noDepth.mp4
 ```
 
 
+### Reverse video
+
+```
+ffmpeg -i video.mp4 -vf reverse video_rev.mp4
+```
+
+
+### Concatenate videos
+
+```
+ffmpeg -i video1.mp4 -i video2.mp4 -filter_complex "[0:v] [1:v] concat=n=2:v=1 [v]" -map "[v]" video_concat.mp4
+```
+
+
+### Change FPS
+
+```
+ffmpeg -i video.mp4 -filter:v "setpts=0.5*PTS" video_2xfps.mp4
+```
+
+
 ### Images to video
 
 * **Numeric** filename
