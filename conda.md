@@ -48,6 +48,15 @@ conda install --name myenv scipy
 ```
 
 
+### Check, add, or remove channels
+
+```
+conda config --get channels
+conda config --add channels anaconda
+conda config --remove channels anaconda
+```
+
+
 ### Rollback
 
 Locate the version before the screwup with
