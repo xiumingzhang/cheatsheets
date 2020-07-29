@@ -11,6 +11,21 @@ ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
 	```
 
 
+### Change Frame Rate
+
+* Speed up by 2x
+
+    ```
+    ffmpeg -i input.mkv -filter:v "setpts=0.5*PTS" output.mkv
+    ```
+
+* Slow down by 2x
+
+    ```
+    ffmpeg -i input.mkv -filter:v "setpts=2.0*PTS" output.mkv
+    ```
+
+
 ### Scale image
 
 * Specify width
