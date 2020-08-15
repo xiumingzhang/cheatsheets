@@ -12,6 +12,13 @@ grep -rnw '/path/to/somewhere/' -e "pattern"
 ```
 
 
+### Replace strings in files under the current directory, recursively
+
+```
+grep -rli 'old-word' * | xargs -i@ sed -i 's/old-word/new-word/g' @
+```
+
+
 ### Find file in current directory
 
 ```
