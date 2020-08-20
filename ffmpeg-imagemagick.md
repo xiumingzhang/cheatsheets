@@ -280,3 +280,10 @@ ffmpeg -i v.mp4 -i a.wav -c:v copy -map 0:v:0 -map 1:a:0 new.mp4
 
 `-map 0:v:0` maps the first (index 0) video stream from the input to the first (index 0) video stream in the output.
 `-map 1:a:0` maps the second (index 1) audio stream from the input to the first (index 0) audio stream in the output.
+
+
+### .webm to .mp4, with high quality
+
+```
+ffmpeg -i video.webm -crf 1 -c:v libx264 video.mp4
+```
