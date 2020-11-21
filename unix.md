@@ -637,6 +637,13 @@ ldconfig -p | grep libx264.so
 ```
 
 
+### Show library linking
+
+```
+ldd /path/to/the/problematic/so
+```
+
+
 ### Replace character in string with another character
 
 ```
