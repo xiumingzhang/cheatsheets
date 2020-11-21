@@ -590,7 +590,7 @@ recursively zips the files, maintaining the file structure.
 ### Unzip
 
 ```
-tar -xvzf images.tar.gz
+tar -xvzf images.tar.gz -C /target/root/
 ```
 
 `f`: this must be the last flag of the command, and the tar file must be immediately after. It tells tar the name and path of the compressed file

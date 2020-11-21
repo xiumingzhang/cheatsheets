@@ -1,3 +1,3 @@
 # cheatsheets
 
-Local location: `~/Dropbox\ \(MIT\)/Notes/cheatsheets`
+Local location: `~/Google\ Drive/Work/Notes/cheatsheets`
