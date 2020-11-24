@@ -1,3 +1,17 @@
+### Change remote (e.g., if the repo. was renamed)
+
+```
+git remote set-url origin git@github.com:xiumingzhang/new.git
+```
+
+
+### Keep working on an unsubmitted commit
+
+```
+git commit --amend
+```
+
+
 ### Undo last commit
 
 If you don't want to keep your changes that you made, do
