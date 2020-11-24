@@ -33,6 +33,13 @@ conda env create -f environment.yml
 ```
 
 
+### Remove environment
+
+```
+conda remove --name old_name --all # or its alias: `conda env remove --name old_name`
+```
+
+
 ### Rename environment
 
 ```
