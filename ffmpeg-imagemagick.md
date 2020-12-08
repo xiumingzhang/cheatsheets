@@ -16,13 +16,7 @@ ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
 * Speed up by 2x
 
     ```
-    ffmpeg -i input.mkv -filter:v "setpts=0.5*PTS" output.mkv
-    ```
-
-* Slow down by 2x
-
-    ```
-    ffmpeg -i input.mkv -filter:v "setpts=2.0*PTS" output.mkv
+    ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]" -map "[v]" -map "[a]" output.mp4
     ```
 
 
