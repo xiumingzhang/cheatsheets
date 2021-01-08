@@ -1,3 +1,10 @@
+### Resize video to 720p
+
+```
+ffmpeg -i nlt_v21.mp4 -vf scale=-1:720 -c:v libx264 -crf 18 -preset veryslow -c:a copy nlt_v21_720p.mp4
+```
+
+
 ### Cut video
 
 ```
