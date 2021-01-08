@@ -55,11 +55,11 @@ The workflow I follow is:
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$PDF_FILE".compressed "$PDF_FILE"
     mv "$PDF_FILE".compressed "$PDF_FILE"
     ```
-   If the compressed quality is not ideal, see `unix.md` for other compression
-   options available.
+   If the compressed quality is not ideal, see
+   [`unix.md`](https://github.com/xiumingzhang/cheatsheets/blob/master/unix.md)
+   for other compression options available.
 
-1. Make sure it still compiles into the correct PDF by doing `latex`, `bibtex`,
-   `latex`, and again `latex` in TeXShop. Also click "Trash Aux Files."
+1. Make sure the project still compiles into the correct PDF by doing `latex`,
+   `bibtex`, `latex`, and again `latex` in TeXShop. Also click "Trash Aux Files."
 
-1. Remove the compiled PDF (because it's big) and possibly other big compilation
-   byproducts.
+1. Remove the compiled PDF (because it's big) to stay under 50 MB.
