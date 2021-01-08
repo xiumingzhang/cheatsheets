@@ -1,3 +1,12 @@
+### Compress PDF
+
+```
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=small.pdf big.pdf
+```
+Different levels of compression: `/screen` (72 DPI), `/ebook` (150 DPI), `/prepress` (300 DPI),
+`/printer` (300 DPI), and `/default`.
+
+
 ### Shebang
 
 ```
