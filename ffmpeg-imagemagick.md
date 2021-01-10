@@ -1,3 +1,21 @@
+### Combine a folder of .m4a files into a single .m4a
+
+```
+folder="$1"
+
+tmp_file='/Users/xiuming/Desktop/tmp.aac'
+out_file='/Users/xiuming/Desktop/combined.m4a'
+
+for f in "$folder"/*.m4a; do
+    aac_file="$f.aac"
+    ffmpeg -i "$f" -acodec copy "$aac_file" -y
+    cat "$aac_file" >> "$tmp_file"
+done
+
+ffmpeg -i "$tmp_file" -bsf:a aac_adtstoasc "$out_file" -y
+```
+
+
 ### Resize video to 720p
 
 ```
