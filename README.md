@@ -1,3 +1,3 @@
 # cheatsheets
 
-Local location: `~/Google\ Drive/Work/Notes/cheatsheets`
+Local location: `~/Google\ Drive/code/cheatsheets`
