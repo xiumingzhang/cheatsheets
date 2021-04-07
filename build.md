@@ -2,7 +2,7 @@
 
 ## Configure
 
-```
+```bash
 ./configure --prefix=/my/nfs/build/folder
 
 make -j
@@ -11,7 +11,7 @@ make install
 
 ## CMake
 
-```
+```bash
 # Inside build folder
 cmake /src/folder -DCMAKE_INSTALL_PREFIX=/my/nfs/build/folder
 
@@ -20,7 +20,7 @@ make install
 ```
 
 ### Passing in lib file, include dir, lib root/home
-```
+```bash
 -DTIFF_LIBRARY=/tiff_build/lib/libtiff.so \
 -DTIFF_INCLUDE_DIR=/tiff_build/include \
 -DOPENEXR_HOME=/openexr_build/ \
@@ -28,7 +28,7 @@ make install
 ```
 
 ### Lib and include dir to search first
-```
+```bash
 -DCMAKE_LIBRARY_PATH=$SHAPETIME_DIR/software/Anaconda3-4.3.1-Linux-x86_64/lib \
 -DCMAKE_INCLUDE_PATH=$SHAPETIME_DIR/software/Anaconda3-4.3.1-Linux-x86_64/include
 ```
@@ -40,7 +40,7 @@ make install
 ## Blender as Python Module
 
 Built on `tuesday` with
-```
+```bash
 cmake ../blender \
 -DWITH_CODEC_SNDFILE=ON \
 -DPYTHON_VERSION=3.6 \
@@ -77,6 +77,6 @@ cmake ../blender \
 
 ### Caveats
 FFmpeg has to be compiled with `-fPIC`:
-```
+```bash
 ./configure --enable-shared --prefix=$MOON_DIR/software/ffmpeg_build/
 ```

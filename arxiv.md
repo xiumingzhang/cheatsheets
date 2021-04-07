@@ -25,19 +25,19 @@ The workflow I follow is:
 
 1. Expand all `.tex` so that we have a single, all-in-one file `main_arxiv.tex`
    (and this will also remove all comments for privacy):
-    ```
+    ```bash
     cd "$LATEX_PROJECT_ROOT"
     latexpand --empty-comments main.tex -o main_arxiv.tex
     ```
 
     `latexpand` comes with MacTeX:
-    ```
+    ```bash
     $ which latexpand
     /Library/TeX/texbin/latexpand
     ```
 
 1. Remove all now-redundant files:
-    ```
+    ```bash
     rm -f fig/*.tex
 
     # Remove all .tex files except main_arxiv.tex
@@ -50,7 +50,7 @@ The workflow I follow is:
     ```
 
 1. Compress PDFs to make sure the final .zip will be less than 50 MB:
-    ```
+    ```bash
     PDF_FILE='fig/big.pdf'
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$PDF_FILE".compressed "$PDF_FILE"
     mv "$PDF_FILE".compressed "$PDF_FILE"

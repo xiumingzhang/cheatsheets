@@ -1,6 +1,6 @@
 ### Combine a folder of .m4a files into a single .m4a
 
-```
+```bash
 folder="$1"
 
 tmp_file='/Users/xiuming/Desktop/tmp.aac'
@@ -18,20 +18,20 @@ ffmpeg -i "$tmp_file" -bsf:a aac_adtstoasc "$out_file" -y
 
 ### Resize video to 720p
 
-```
+```bash
 ffmpeg -i nlt_v21.mp4 -vf scale=-1:720 -c:v libx264 -crf 18 -preset veryslow -c:a copy nlt_v21_720p.mp4
 ```
 
 
 ### Cut video
 
-```
+```bash
 ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
 ```
 
 * To also remove sound and **convert format**
 
-	```
+	```bash
 	ffmpeg -i sintel.avi -ss 0:9:37.0 -c copy -to 0:9:40.50 -an bigFight.mp4
 	```
 
@@ -40,7 +40,7 @@ ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
 
 * Speed up by 2x
 
-    ```
+    ```bash
     ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]" -map "[v]" -map "[a]" output.mp4
     ```
 
@@ -49,41 +49,41 @@ ffmpeg -i input.mkv -ss 1:40:00.0 -c copy -to 1:59:15.30 output.mkv
 
 * Specify width
 
-	```
+	```bash
 	ffmpeg -i in.png -vf scale=iw/2:-1 out.png
 	```
 
 * Specify height
 
-	```
+	```bash
 	ffmpeg -i in.png -vf scale=-1:ih/2 out.png
 	```
 
 
 ### Convert format
 
-```
+```bash
 ffmpeg -i dense.avi -c:v libx264 noDepth.mp4
 ```
 
 
 ### Reverse video
 
-```
+```bash
 ffmpeg -i video.mp4 -vf reverse video_rev.mp4
 ```
 
 
 ### Concatenate videos
 
-```
+```bash
 ffmpeg -i video1.mp4 -i video2.mp4 -filter_complex "[0:v] [1:v] concat=n=2:v=1 [v]" -map "[v]" video_concat.mp4
 ```
 
 
 ### Change FPS
 
-```
+```bash
 ffmpeg -i video.mp4 -filter:v "setpts=0.5*PTS" video_2xfps.mp4
 ```
 
@@ -92,19 +92,19 @@ ffmpeg -i video.mp4 -filter:v "setpts=0.5*PTS" video_2xfps.mp4
 
 * **Numeric** filename
 
-	```
+	```bash
 	ffmpeg -framerate 20 -start_number 1 -i %3d_0zz.png -vf fps=20 -pix_fmt yuv420p output.mp4
 	```
 
 * **Character** filename
 
-	```
+	```bash
 	ffmpeg -framerate 2 -pattern_type glob -i "*.png" -pix_fmt yuv420p output.mp4
 	```
 
 * Filename of **certain length**
 
-	```
+	```bash
 	ffmpeg -framerate 2 -pattern_type glob -i "???.png" -pix_fmt yuv420p -y output.mp4
 	```
 
@@ -112,19 +112,19 @@ ffmpeg -i video.mp4 -filter:v "setpts=0.5*PTS" video_2xfps.mp4
 
 * If **not divisible by 2** (specify height)
 
-	```
+	```bash
 	ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=-2:720 -pix_fmt yuv420p output.mp4
 	```
 
 * If not divisible by 2 (specify width)
 
-	```
+	```bash
 	ffmpeg -framerate 10 -pattern_type glob -i "*.png" -vf scale=1280:-2 -pix_fmt yuv420p output.mp4
 	```
 
 * Start from and end at
 
-	```
+	```bash
 	ffmpeg -start_number 250 -i img_%4d.jpg -vframes 500 -vcodec mpeg4 output.mp4
 	```
 
@@ -134,7 +134,7 @@ ffmpeg -i video.mp4 -filter:v "setpts=0.5*PTS" video_2xfps.mp4
 
 	Set bitrate (around 5 Mbits/s for DVD) and codec by adding flags:
 
-	```
+	```bash
 	-b 5000k -vcodec libx264
 	```
 
@@ -143,28 +143,28 @@ ffmpeg -i video.mp4 -filter:v "setpts=0.5*PTS" video_2xfps.mp4
 
 ### Make GIF
 
-```
+```bash
 convert -delay 20 -loop 0 *jpg animated.gif
 ```
 
 
 ### Crop GIF
 
-```
+```bash
 convert in.gif -coalesce -repage 0x0 -crop WxH+X+Y +repage out.gif
 ```
 
 
 ### Make GIF loop
 
-```
+```bash
 convert -delay 20 -loop 0 nonloopingImage.gif loopingImage.gif
 ```
 
 
 ### Overlay A on top of B
 
-```
+```bash
 ffmpeg -i B.png -i A.png -filter_complex "[0:v][1:v] overlay" out.png
 ```
 
@@ -173,7 +173,7 @@ ffmpeg -i B.png -i A.png -filter_complex "[0:v][1:v] overlay" out.png
 
 * **Scale** A before overlaying
 
-	```
+	```bash
 	ffmpeg -i B.png -i A.png -filter_complex "[1]scale=iw/2:-1[b];[0:v][b] overlay" out.png
 	```
 
@@ -181,7 +181,7 @@ ffmpeg -i B.png -i A.png -filter_complex "[0:v][1:v] overlay" out.png
 
 * **Make transparent** A before overlaying
 
-	```
+	```bash
 	ffmpeg -i B.png -i A.png -filter_complex "[1]format=argb,geq=r='r(X,Y)':a='0.5*alpha(X,Y)'[b];[0:v][b] overlay" out.png
 	```
 
@@ -190,14 +190,14 @@ ffmpeg -i B.png -i A.png -filter_complex "[0:v][1:v] overlay" out.png
 
 ### Horizontally stack two images/videos
 
-```
+```bash
 ffmpeg -i a.jpg -i b.jpg -filter_complex hstack output
 ```
 
 
 ### Horizontally stack two images/videos; need to rescale one
 
-```
+```bash
 ffmpeg -i left.png -i right.png -filter_complex '[1][0]scale2ref=ih*(W/H):ih[2nd][ref];[ref][2nd]hstack' out.png
 ```
 
@@ -208,7 +208,7 @@ If calling this from Python, you may need to remove the quotes.
 
 ### Vertically stack two images/videos; need to rescale one
 
-```
+```bash
 ffmpeg -i top.png -i bottom.png -filter_complex '[1][0]scale2ref=iw:iw*(H/W)[2nd][ref];[ref][2nd]vstack' out.png
 ```
 
@@ -217,14 +217,14 @@ where `H` and `W` should be replaced with the height and width of `bottom.png`, 
 
 ### Overlay text on image
 
-```
+```bash
 convert in.png -pointsize 40 -fill red -annotate +100+100 'My Text' out.png
 ```
 
 
 ### Rotate images in a folder
 
-```
+```bash
 for file in ./*.png; do
     convert "$file" -rotate 90 "${file%.png}"_rotated.png
 done
@@ -233,28 +233,28 @@ done
 
 ### Crop a video
 
-```
+```bash
 ffmpeg -i gump_orig.mp4 -vf "crop=<out_w>:<out_h>:<x>:<y>" gump.mp4
 ```
 
 
 ### Crop an image
 
-```
+```bash
 ffmpeg -i in.png -vf "crop=<out_w>:<out_h>:<x>:<y>" out.png
 ```
 
 
 ### Get image info
 
-```
+```bash
 identify -verbose im.tif
 ```
 
 
 ### Photo montage
 
-```
+```bash
 montage [0-5].png -tile 5x1 -geometry +0+0 out.png
 ```
 
@@ -263,14 +263,14 @@ ImageMagick ships with the `montage` utility. Montage will append each image sid
 
 ### Replace alpha/transparent background with solid color
 
-```
+```bash
 convert image.png -background white -alpha remove white.png
 ```
 
 
 ### Change video speed
 
-```
+```bash
 ffmpeg -i input.mkv -filter:v "setpts=PTS/60" output.mkv 
 ```
 speeds up the video by 60x.
@@ -278,7 +278,7 @@ speeds up the video by 60x.
 
 ### Replace image alpha background with a pure color
 
-```
+```bash
 ffmpeg -i in.png -filter_complex "color=black,format=rgb24[c];[c][0]scale2ref[c][i];[c][i]overlay=format=auto:shortest=1,setsar=1" out.png
 ```
 overlays the image with alpha on top of a `black` canvas.
@@ -286,14 +286,14 @@ overlays the image with alpha on top of a `black` canvas.
 
 ### Extract audio from video
 
-```
+```bash
 ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac
 ```
 
 
 ### Replace audio in video
 
-```
+```bash
 ffmpeg -i v.mp4 -i a.wav -c:v copy -map 0:v:0 -map 1:a:0 new.mp4
 ```
 
@@ -303,6 +303,6 @@ ffmpeg -i v.mp4 -i a.wav -c:v copy -map 0:v:0 -map 1:a:0 new.mp4
 
 ### .webm to .mp4, with high quality
 
-```
+```bash
 ffmpeg -i video.webm -crf 1 -c:v libx264 video.mp4
 ```
