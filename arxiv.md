@@ -49,7 +49,7 @@ The workflow I follow is:
     rm -rf tbl/
     ```
 
-1. Compress PDFs to make sure the final .zip will be less than 50 MB:
+1. If necessary, compress PDFs to make sure the final .zip will be less than 50 MB:
     ```bash
     PDF_FILE='fig/big.pdf'
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$PDF_FILE".compressed "$PDF_FILE"
@@ -60,6 +60,6 @@ The workflow I follow is:
    for other compression options available.
 
 1. Make sure the project still compiles into the correct PDF by doing `latex`,
-   `bibtex`, `latex`, and again `latex` in TeXShop. Also click "Trash Aux Files."
+   `bibtex`, `latex`, and again `latex` in TeXShop.
 
-1. Remove the compiled PDF (because it's big) to stay under 50 MB.
+1. Click "Trash Aux Files." Remove `main_arxiv.pdf` (since it's large).
