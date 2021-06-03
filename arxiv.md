@@ -23,6 +23,8 @@ with the same filenames ("Hey, but the extensions are different!" I know...).
 
 The workflow I follow is:
 
+1. Download the source .zip from Overleaf.
+
 1. Expand all `.tex` so that we have a single, all-in-one file `main_arxiv.tex`
    (and this will also remove all comments for privacy):
     ```bash
@@ -63,3 +65,5 @@ The workflow I follow is:
    `bibtex`, `latex`, and again `latex` in TeXShop.
 
 1. Click "Trash Aux Files." Remove `main_arxiv.pdf` (since it's large).
+
+1. Zip the folder and upload.
