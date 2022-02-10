@@ -34,7 +34,7 @@ git reset --soft HEAD^
 cd "$repo_root"
 git rm -r --cached .
 git add .
-git commit -m "resync with new .gitignore"
+git commit -m "Resync with new .gitignore"
 ```
 
 
